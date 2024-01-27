@@ -28,7 +28,7 @@ const run = async () => {
 
   app.get('/get-increment', async (req, res) => {
     const result = await client.query('select max(i) from mytable')
-    res.send({ max: result.rows[0].max })
+    res.send({ max: result.rows[0].max , testUpdate: 'test'})
   })
 
   app.get('/get-increment-from-service', async (req, res) => {
